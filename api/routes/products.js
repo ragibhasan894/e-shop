@@ -10,8 +10,13 @@ router.get('/', (req, res, next) => {
 
 // Create a new product
 router.post('/', (req, res, next) => {
+    const product = {
+        name: req.body.name,
+        price: req.body.price
+    };
     res.status(200).json({
-        message: "Handling GET requests to /procucts"
+        message: "Handling POST requests to /procucts",
+        createdProduct: product
     });
 });
 
